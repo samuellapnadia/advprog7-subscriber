@@ -85,5 +85,9 @@ This is the place for you to write reflections:
 ### Mandatory (Subscriber) Reflections
 
 #### Reflection Subscriber-1
+1. In this tutorial, RwLock is used to allow multiple readers or a single writer at a time. Since the NOTIFICATIONS data might often be read (for example is to list notifications) rather than written (for is example is to add new ones), using RwLock improves performance by allowing concurrent reads. On the other hand, Mutex only allows one thread to access the data at any time, even for read-only operations, which would be unnecessarily restrictive in this case.
+
+2. Rust emphasizes safety and concurrency guarantees. In Java, static variables can be mutated freely, but this often leads to concurrency issues if not handled properly. In Rust, all static variables must be immutable unless unsafe code is used. To safely create mutable global variables, we use lazy_static!, which ensures thread-safe, one-time initialization of values like Vec or DashMap. It wraps them inside synchronization primitives like Mutex or RwLock, allowing controlled access in a safe way, unlike Java's more lenient but risky approach.
+
 
 #### Reflection Subscriber-2
