@@ -91,3 +91,8 @@ This is the place for you to write reflections:
 
 
 #### Reflection Subscriber-2
+1. I haven't explored parts outside the tutorial steps like src/lib.rs yet. My focus was on following the main flow and ensuring the Receiver and Main apps worked as intended. However, this makes me plan to look into how global configurations are handled and how modules are structured in Rust. I plan to explore this once I'm more confident with the main features.
+
+2. The Observer pattern made it really easy to plug in more subscribers. After spawning three different Receiver instances, the Main app was able to notify all of them without needing any changes to the core logic. This decoupling shows how scalable the system is. Even if I wanted to add another Main app instance, it would still work because each component communicates through standard interfaces, not hardcoded dependencies.
+
+3. I am planning to do it soon. It would be helpful for checking the endpoints more efficiently, especially once I try running multiple instances. Having a proper collection will definitely make testing and debugging smoother in the long run.
